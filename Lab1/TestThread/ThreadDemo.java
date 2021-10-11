@@ -18,7 +18,12 @@ class ThreadDemo extends Thread {
     * Every thread is given a name
     */
    private String threadName;
-   
+
+   /**
+    * Constructor that initialises the thread class
+    * And prints the name of the thread to the system.
+    * @param name - Name of the thread
+    */
    ThreadDemo( String name) {
       threadName = name;
       System.out.println("Creating " +  threadName );
@@ -47,10 +52,20 @@ class ThreadDemo extends Thread {
        */
       System.out.println("Thread " +  threadName + " exiting.");
    }
-   
+
+   /**
+    * The method starts a thread name, prints the thread name.
+    */
    @Override
    public void start () {
+      /**
+       * Prints the thread name at the start of the thread lifecycle
+       */
       System.out.println("Starting " +  threadName );
+      /**
+       * Method checks if the thread object points to a thread
+       * If condition is true, a new thread is invoked and 't' is used as a reference to that thread.
+       */
       if (t == null) {
          t = new Thread (this, threadName);
          t.start ();

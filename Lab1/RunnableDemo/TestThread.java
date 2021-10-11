@@ -7,6 +7,8 @@ package Lab1.RunnableDemo;
 /**
  *
  * @author KEHOEJ
+ *
+ *  Create two threads and run them.
  */
 public class TestThread {
     public static void main(String args[]) {

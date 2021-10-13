@@ -6,6 +6,7 @@ Run times of java code taken from labTwo.zip
 #3 - 2509407699
 #4 - 2519603101
 #5 - 2506720401
+    Average - 2513506800.2
 #####
 Run times of java code using synchronized
     Nano Seconds
@@ -14,3 +15,14 @@ Run times of java code using synchronized
 #3 - 2506843400
 #4 - 2526980500
 #5 - 2513147800
+    Average - 2512439440
+#####
+Run times of java code using a mutex lock
+    Nano Seconds
+#1 - 2521521701
+#2 - 2509274699
+#3 - 2511955700
+#4 - 2518795199
+#5 - 2519310100
+    Average - 2516171479.8
+#####

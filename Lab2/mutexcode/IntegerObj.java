@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Lab2.synchronizedcode;
+package Lab2.mutexcode;
+
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  *
@@ -15,6 +17,8 @@ class IntegerObj {
      */
     int value;
 
+    private ReentrantLock mutex = new ReentrantLock();
+
     /**
      * Constructor to initialise the object
      * @param val - Integer value of the object
@@ -24,11 +28,17 @@ class IntegerObj {
     }
 
     /**
-     * Synchronized Method to increment the value by one
+     * Method to increment the value by one
+     * A mutex lock is used in the critical section
      * @return - Returns the current value integer variable
      */
-    synchronized int inc(){
-        this.value++;
-        return this.value;
+     int inc(){
+         try{
+             mutex.lock();
+             this.value++;
+         }finally {
+             mutex.unlock();
+             return this.value;
+         }
     }
 }

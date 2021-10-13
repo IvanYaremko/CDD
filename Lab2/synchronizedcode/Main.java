@@ -3,9 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Lab2;
-import java.text.SimpleDateFormat; 
-import java.util.Date;
+package Lab2.synchronizedcode;
+
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.logging.Level;
@@ -27,7 +26,7 @@ public class Main {
         Runnable r1 = new Task("task 1",total);
         Runnable r2 = new Task("task 2",total);
         Runnable r3 = new Task("task 3",total);
-        Runnable r4 = new Task("task 4",total);    
+        Runnable r4 = new Task("task 4",total);
           
         // creates a thread pool with MAX_T no. of 
         // threads as the fixed pool size(Step 2)

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Lab2;
+package Lab2.synchronizedcode;
 
 /**
  *
@@ -27,7 +27,7 @@ class IntegerObj {
      * Method to increment the value by one
      * @return - Returns the current value integer variable
      */
-    int inc(){
+    synchronized int inc(){
         this.value++;
         return this.value;
     }

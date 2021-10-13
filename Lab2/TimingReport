@@ -26,3 +26,10 @@ Run times of java code using a mutex lock
 #5 - 2519310100
     Average - 2516171479.8
 #####
+Rune times of java code using an Atomic Integer as the counter
+#1 - 2507402600
+#2 - 2511677199
+#3 - 2508716900
+#4 - 2508812101
+#5 - 2507083700
+    Average - 2508738500

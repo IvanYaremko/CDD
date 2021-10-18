@@ -1,0 +1,31 @@
+Barrier
+	•TotalThreads
+	•ArrivedSoFar
+	•Mutex (semaphore)
+	•bSem (barrier semaphore)
+---------------------------
+Initialise 
+	-> TotalThread = N
+	-> ArrivedSoFar = 0
+	-> mutex(1)
+	-> bSam(0)
+-----------------------------
+arrive ? 
+---------------------------
+Mutex.accuire()
+ArrivedSoFar++
+Mutex.release()
+if(ArrivedSoFar == TotalThreads)
+	// all Go
+	bSem.release()
+else
+	//wait
+	bSem.accuire() // Initialised to zero, going to block
+	bSem.release()
+
+	• Mutex needed to stop data erase
+		- Semaphore
+
+
+						
+					

@@ -15,7 +15,7 @@ class IntegerObj {
     /**
      * Here an Atomic Integer object is used as a counter
      */
-    AtomicInteger value = new AtomicInteger();
+    AtomicInteger value;
     /**
      * Constructor to initialise the object
      * @param val - Integer value of the object

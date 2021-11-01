@@ -11,6 +11,6 @@ public class Task implements Runnable {
 
     @Override
     public void run() {
-        barrier.barrier(this);
+              barrier.barrier(this);
     }
 }

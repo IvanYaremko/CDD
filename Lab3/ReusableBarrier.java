@@ -18,31 +18,31 @@ public class ReusableBarrier {
         System.out.println(t.name + " has arrived");
         try {
 
-            mutex.wait();
+            mutex.acquire();
             count++;
             if(count == n){
                 turnstile2.acquire();
                 turnstile.release();
             }
-            mutex.notify();
+            mutex.release();
 
             turnstile.acquire();
             turnstile.release();
 
             System.out.println(t.name + " past first turnstile");
 
-            mutex.wait();
+            mutex.acquire();
             count -= 1;
             if(count == 0){
                 turnstile.acquire();
                 turnstile2.release();
             }
-            mutex.notify();
+            mutex.release();
 
             turnstile2.acquire();
             turnstile2.release();
 
-            System.out.printf(t.name + " pas second turnstile");
+            System.out.println(t.name + " pas second turnstile");
 
 
         } catch (InterruptedException e) {

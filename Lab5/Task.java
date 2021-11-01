@@ -1,10 +1,10 @@
 package Lab5;
 
 public class Task implements Runnable{
-    String name;
+    char name;
     LeaderFollower lf;
 
-    Task(String tName, LeaderFollower leaderFollower){
+    Task(char tName, LeaderFollower leaderFollower){
         this.name = tName;
         this.lf = leaderFollower;
     }
@@ -13,6 +13,10 @@ public class Task implements Runnable{
 
     @Override
     public void run() {
-        lf.danceParty(this);
+        try {
+            lf.danceParty(this);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }

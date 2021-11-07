@@ -1,18 +1,22 @@
 package Lab5;
 
-
-
-import java.util.ArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+/**
+ * @Author Ivan Yaremko
+ */
 public class Main {
     public static void main(String[] args) {
+        /**
+         * Initialise the LeaderFollower object
+         */
         LeaderFollower lf = new LeaderFollower();
 
 
-
-        // Create 4 tasks
+        /**
+         * Generate 12 tasks, leaders & followers. Leaders = letters, followers = numbers
+         */
         Runnable r1 = new Task('A',lf);
         Runnable r2 = new Task('B',lf);
         Runnable r3 = new Task('C',lf);
@@ -27,10 +31,15 @@ public class Main {
         Runnable r12 = new Task('6',lf);
 
 
-        // creates a thread pool
+        /**
+         *  creates a thread pool
+         */
+
         ExecutorService pool = Executors.newFixedThreadPool(12);
 
-        // passes the Task objects to the pool to execute (Step 3)
+        /**
+         * passes the Task objects to the pool to execute (Step 3)
+         */
         pool.execute(r1);
         pool.execute(r2);
         pool.execute(r3);
@@ -43,7 +52,9 @@ public class Main {
         pool.execute(r10);
         pool.execute(r11);
         pool.execute(r12);
-        // pool shutdown
+        /**
+         * pool shutdown
+         */
         pool.shutdown();
 
     }

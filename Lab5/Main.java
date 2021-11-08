@@ -9,51 +9,37 @@ import java.util.concurrent.Executors;
 public class Main {
     public static void main(String[] args) {
         /**
-         * Initialise the LeaderFollower object
+         * Create queue object where the leader-follower logic exists
          */
-        LeaderFollower lf = new LeaderFollower();
-
+        Queue queue = new Queue();
 
         /**
-         * Generate 12 tasks, leaders & followers. Leaders = letters, followers = numbers
+         * Creaate leader + follower tasks and pass the queue object
          */
-        Runnable r1 = new Task('A',lf);
-        Runnable r2 = new Task('B',lf);
-        Runnable r3 = new Task('C',lf);
-        Runnable r4 = new Task('D',lf);
-        Runnable r5 = new Task('E',lf);
-        Runnable r6 = new Task('F',lf);
-        Runnable r7 = new Task('1',lf);
-        Runnable r8 = new Task('2',lf);
-        Runnable r9 = new Task('3',lf);
-        Runnable r10 = new Task('4',lf);
-        Runnable r11 = new Task('5',lf);
-        Runnable r12 = new Task('6',lf);
-
+        Leader l1 = new Leader("A", queue);
+        Leader l2 = new Leader("B", queue);
+        Leader l3 = new Leader("C", queue);
+        Leader l4 = new Leader("D", queue);
+        Follower f1 = new Follower("1", queue);
+        Follower f2 = new Follower("2", queue);
+        Follower f3 = new Follower("3", queue);
+        Follower f4 = new Follower("4", queue);
 
         /**
-         *  creates a thread pool
+         * Create the service pool and execute the tasks
          */
-
-        ExecutorService pool = Executors.newFixedThreadPool(12);
+        ExecutorService pool = Executors.newFixedThreadPool(8);
+        pool.execute(l1);
+        pool.execute(l2);
+        pool.execute(l3);
+        pool.execute(l4);
+        pool.execute(f1);
+        pool.execute(f2);
+        pool.execute(f3);
+        pool.execute(f4);
 
         /**
-         * passes the Task objects to the pool to execute (Step 3)
-         */
-        pool.execute(r1);
-        pool.execute(r2);
-        pool.execute(r3);
-        pool.execute(r4);
-        pool.execute(r5);
-        pool.execute(r6);
-        pool.execute(r7);
-        pool.execute(r8);
-        pool.execute(r9);
-        pool.execute(r10);
-        pool.execute(r11);
-        pool.execute(r12);
-        /**
-         * pool shutdown
+         * Shut down pool
          */
         pool.shutdown();
 

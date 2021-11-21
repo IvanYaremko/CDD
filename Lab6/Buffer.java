@@ -5,7 +5,7 @@ import java.util.concurrent.Semaphore;
 
 /**
  * @Author Ivan Yaremko
- *
+ * @Reference Downey, A., 2016. The Little Book of Semaphores.
  * This Buffer class implements the buffer producer-consumer solution
  */
 public class Buffer {
